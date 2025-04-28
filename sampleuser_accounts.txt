@@ -1,0 +1,51 @@
+nmi@LAPTOP-9NQJ01OI MINGW64 /c/xampp_8/htdocs/social-forum-systems
+$ php spark user:manage create
+
+CodeIgniter v4.6.0 Command Line Tool - Serv
+er Time: 2025-04-28 12:30:09 UTC+00:00     
+
+Enter username : sampleReaderAccount1      
+Enter email : readeraccount1@blogspot.com  
+Enter password : aza123456
+Enter privilage type (reader, editor, publi
+sher, admin, super-admin) : reader
+User created successfully.
+
+nmi@LAPTOP-9NQJ01OI MINGW64 /c/xampp_8/htdocs/social-forum-systems
+$ php spark user:manage create
+
+CodeIgniter v4.6.0 Command Line Tool - Serv
+er Time: 2025-04-28 12:31:02 UTC+00:00     
+
+Enter username : sampleeditoraccount1      
+Enter email : sampleeditor1@blog.com       
+Enter password : aza12345678
+Enter privilage type (reader, editor, publi
+sher, admin, super-admin) : editor
+User created successfully.
+
+nmi@LAPTOP-9NQJ01OI MINGW64 /c/xampp_8/htdocs/social-forum-systems
+$ php spark user:manage create
+
+CodeIgniter v4.6.0 Command Line Tool - Serv
+er Time: 2025-04-28 12:32:09 UTC+00:00     
+
+Enter username : samplepublisher01
+Enter email : samplepublsiher@blog.com     
+Enter password : aza12345678
+Enter privilage type (reader, editor, publi
+sher, admin, super-admin) : publisher      
+User created successfully.
+
+nmi@LAPTOP-9NQJ01OI MINGW64 /c/xampp_8/htdocs/social-forum-systems
+$ php spark user:manage create
+
+CodeIgniter v4.6.0 Command Line Tool - Serv
+er Time: 2025-04-28 12:32:49 UTC+00:00     
+
+Enter username : sampleadmin1
+Enter email : sampleadmin@blog.com
+Enter password : aza123456789
+Enter privilage type (reader, editor, publi
+sher, admin, super-admin) : admin
+User created successfully.
