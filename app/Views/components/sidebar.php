@@ -183,6 +183,14 @@
             Monitor Activities
         </a>
     </li>
+    <li>
+        <a>
+            <span class="icon is-large">
+                <i class="fas fa-lg fa-envelope-open-text"></i>
+            </span>
+            Suggetsions & Feedback
+        </a>
+    </li>
   </ul>
   <p class="menu-label">
     <span class="icon">
