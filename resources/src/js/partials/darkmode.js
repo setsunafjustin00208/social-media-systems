@@ -4,7 +4,8 @@ var darkmode = {
         navbar: '#navbar',
         mainContent: '#main-content',
         darkmodeToggle: '#darkmode-toggle',
-        chatComponent: '#chat-componet'
+        chatComponent: '#chat-componet',
+        chatColumn: '.chat-column',
     },
     classes: {
         lightTheme: 'theme-light',
@@ -13,35 +14,8 @@ var darkmode = {
         navbarDark: 'is-dark',
         mainContentLight: 'has-background-white-ter',
         mainContentDark: 'has-background-black-ter',
-    },
-    init: function() {
-        // Check local storage for the theme preference
-        const currentTheme = localStorage.getItem('theme') || darkmode.classes.lightTheme;
-        $(darkmode.elements.html).attr('class', currentTheme);
-
-        // Update the navbar, main content, and chat component classes based on the theme
-        darkmode.updateNavbarClass(currentTheme);
-        darkmode.updateMainContentClass(currentTheme);
-        darkmode.updateChatComponentTheme(currentTheme);
-    },
-    toggle: function() {
-        const $html = $(darkmode.elements.html);
-        const isDarkMode = $html.hasClass(darkmode.classes.darkTheme);
-
-        // Toggle between light and dark themes
-        if (isDarkMode) {
-            $html.removeClass(darkmode.classes.darkTheme).addClass(darkmode.classes.lightTheme);
-            localStorage.setItem('theme', darkmode.classes.lightTheme);
-            darkmode.updateNavbarClass(darkmode.classes.lightTheme);
-            darkmode.updateMainContentClass(darkmode.classes.lightTheme);
-            darkmode.updateChatComponentTheme(darkmode.classes.lightTheme);
-        } else {
-            $html.removeClass(darkmode.classes.lightTheme).addClass(darkmode.classes.darkTheme);
-            localStorage.setItem('theme', darkmode.classes.darkTheme);
-            darkmode.updateNavbarClass(darkmode.classes.darkTheme);
-            darkmode.updateMainContentClass(darkmode.classes.darkTheme);
-            darkmode.updateChatComponentTheme(darkmode.classes.darkTheme);
-        }
+        chatColumnLight: 'has-background-grey-lighter',
+        chatColumnDark: 'has-background-grey-darker',
     },
     updateNavbarClass: function(theme) {
         const $navbar = $(darkmode.elements.navbar);
@@ -60,6 +34,16 @@ var darkmode = {
                 $mainContent.removeClass(darkmode.classes.mainContentLight).addClass(darkmode.classes.mainContentDark);
             } else {
                 $mainContent.removeClass(darkmode.classes.mainContentDark).addClass(darkmode.classes.mainContentLight);
+            }
+        }
+    },
+    updateChatColumnClass: function(theme) {
+        const $chatColumnClass = $(darkmode.elements.chatColumn);
+        if ($chatColumnClass.length) { // Check if the main content exists
+            if (theme === darkmode.classes.darkTheme) {
+                $chatColumnClass.removeClass(darkmode.classes.chatColumnLight).addClass(darkmode.classes.chatColumnDark);
+            } else {
+                $chatColumnClass.removeClass(darkmode.classes.chatColumnDark).addClass(darkmode.classes.chatColumnLight);
             }
         }
     },
@@ -90,7 +74,42 @@ var darkmode = {
                 });
             }
         }
-    }
+    },
+
+    events: {
+        toggle: function() {
+            const $html = $(darkmode.elements.html);
+            const isDarkMode = $html.hasClass(darkmode.classes.darkTheme);
+    
+            // Toggle between light and dark themes
+            if (isDarkMode) {
+                $html.removeClass(darkmode.classes.darkTheme).addClass(darkmode.classes.lightTheme);
+                localStorage.setItem('theme', darkmode.classes.lightTheme);
+                darkmode.updateNavbarClass(darkmode.classes.lightTheme);
+                darkmode.updateMainContentClass(darkmode.classes.lightTheme);
+                darkmode.updateChatComponentTheme(darkmode.classes.lightTheme);
+                darkmode.updateChatColumnClass(darkmode.classes.lightTheme);
+            } else {
+                $html.removeClass(darkmode.classes.lightTheme).addClass(darkmode.classes.darkTheme);
+                localStorage.setItem('theme', darkmode.classes.darkTheme);
+                darkmode.updateNavbarClass(darkmode.classes.darkTheme);
+                darkmode.updateMainContentClass(darkmode.classes.darkTheme);
+                darkmode.updateChatComponentTheme(darkmode.classes.darkTheme);
+                darkmode.updateChatColumnClass(darkmode.classes.darkTheme);
+            }
+        },
+    },
+
+    init: function() {
+        // Check local storage for the theme preference
+        const currentTheme = localStorage.getItem('theme') || darkmode.classes.lightTheme;
+        $(darkmode.elements.html).attr('class', currentTheme);
+
+        // Update the navbar, main content, and chat component classes based on the theme
+        darkmode.updateNavbarClass(currentTheme);
+        darkmode.updateMainContentClass(currentTheme);
+        darkmode.updateChatComponentTheme(currentTheme);
+    },
 };
 
 // Initialize dark mode on page load
@@ -99,6 +118,6 @@ $(document).ready(function() {
 
     // Attach the toggle function to the button click
     $(darkmode.elements.darkmodeToggle).on('click', function() {
-        darkmode.toggle();
+        darkmode.events.toggle();
     });
 });
