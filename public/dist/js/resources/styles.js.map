@@ -1,0 +1,1 @@
+{"version":3,"file":"styles.js","sources":["resources/styles.js"],"sourcesContent":["var styles = {\n    init: function() {\n        // Initialize your script here\n    }\n};"],"names":["styles","init"],"mappings":"AAAA,IAAIA,OAAS,CACTC,KAAM,YAGV"}

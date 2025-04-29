@@ -1,0 +1,1 @@
+{"version":3,"sources":["components/sidebar.scss"],"names":[],"mappings":"AAAA,SACI,cAAA,IACA,WAAA,EAAA,IAAA,IAAA,eACA,OAAA","file":"sidebar.css","sourcesContent":[".sidebar {\n    border-radius: 5px;\n    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n    height: 100%;\n}"]}

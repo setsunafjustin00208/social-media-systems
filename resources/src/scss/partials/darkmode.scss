@@ -1,0 +1,26 @@
+.darkmode-toggle {
+    position: fixed; /* Changed to fixed for sticky behavior */
+    bottom: 20px; /* Distance from the bottom of the screen */
+    right: 20px; /* Distance from the right of the screen */
+    background-color: #4a4a4a;
+    color: #fff;
+    border-radius: 50%; /* Makes the button circular */
+    width: 60px; /* Adjusted size for better visibility */
+    height: 60px; /* Adjusted size for better visibility */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow for better visibility */
+    z-index: 1000; /* Ensures it stays above other elements */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+
+    &:hover {
+        background-color: #363636; /* Darker background on hover */
+        transform: scale(1.1); /* Slightly enlarges the button on hover */
+    }
+
+    .icon {
+        font-size: 1.8rem; /* Slightly larger icon for better visibility */
+    }
+}

@@ -104,11 +104,12 @@ _modules/*
 nbproject/
 build/
 nbbuild/
-dist/
+# dist/
 nbdist/
 nbactions.xml
 nb-configuration.xml
 .nb-gradle/
+node_modules/
 
 # Sublime Text
 *.tmlanguage.cache
@@ -126,4 +127,4 @@ nb-configuration.xml
 /results/
 /phpunit*.xml
 /resources/node_modules/
-node_modules/
+

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="theme-light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,5 +13,6 @@
 </head>
 <body class="">
     <?php echo $this->renderSection('content'); ?>
+    <?php echo $this->include('partials/darkmode'); ?>
 </body>
 </html>
