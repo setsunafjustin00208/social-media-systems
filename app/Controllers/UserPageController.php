@@ -20,6 +20,8 @@ class UserPageController extends BaseController
                 'dist/css/components/sidebar.css',
                 'dist/css/components/footer.css',
                 'dist/css/components/navbar.css',
+                'dist/css/components/chatsWidget.css',
+                'dist/css/components/chat-component.css',
                 'dist/css/pages/user-page.css',
                 'dist/css/pages/index.css',
             ],
@@ -32,6 +34,7 @@ class UserPageController extends BaseController
                 'dist/js/global.js',
                 'dist/js/components/footer.js',
                 'dist/js/components/navbar.js',
+                'dist/js/components/chat-component.js',
                 'dist/js/pages/user-page.js',
             ],
         ];

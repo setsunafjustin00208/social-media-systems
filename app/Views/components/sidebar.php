@@ -1,6 +1,9 @@
 <!-- filepath: c:\xampp_8\htdocs\social-forum-systems\app\Views\components\sidebar.php -->
 <aside class="menu p-3">
   <p class="menu-label">
+    <span class="icon">
+        <i class="fa-lg far fa-user-circle"></i>
+    </span>
     Personal
   </p>
   
@@ -61,7 +64,12 @@
         </a>
     </li>
   </ul>
-  <p class="menu-label">Roleplaying</p>
+  <p class="menu-label">
+    <span class="icon">
+        <i class="fa-lg fas fa-dice"></i>
+    </span>
+    Roleplaying
+</p>
   <ul class="menu-list">
     <li>
         <a>
@@ -104,7 +112,12 @@
         </a>
     </li>
   </ul>
-  <p class="menu-label">Administration</p>
+  <p class="menu-label">
+    <span class="icon">
+        <i class="fa-lg fab fa-black-tie"></i>
+    </span>
+    Administration
+</p>
   <ul class="menu-list">
     <li>
         <a>
@@ -171,7 +184,12 @@
         </a>
     </li>
   </ul>
-  <p class="menu-label">Super Administration</p>
+  <p class="menu-label">
+    <span class="icon">
+        <i class="fa-lg fas fa-user-tie"></i>
+    </span>
+    Super Administration
+</p>
   <ul class="menu-list">
   <li>
         <a>
@@ -187,6 +205,14 @@
                 <i class="fa-lg fab fa-adversal"></i>
             </span>
             Manage Ads
+        </a>
+    </li>
+    <li>
+        <a>
+            <span class="icon is-large">
+                <i class="fa-lg fas fa-chart-pie"></i>
+            </span>
+            Statistics & Reports
         </a>
     </li>
   </ul>

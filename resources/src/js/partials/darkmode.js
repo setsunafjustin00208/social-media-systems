@@ -3,12 +3,13 @@ var darkmode = {
         html: 'html',
         navbar: '#navbar',
         mainContent: '#main-content',
-        darkmodeToggle: '#darkmode-toggle'
+        darkmodeToggle: '#darkmode-toggle',
+        chatComponent: '#chat-componet'
     },
     classes: {
         lightTheme: 'theme-light',
         darkTheme: 'theme-dark',
-        navbarLight: 'is-link',
+        navbarLight: 'is-light',
         navbarDark: 'is-dark',
         mainContentLight: 'has-background-white-ter',
         mainContentDark: 'has-background-black-ter',
@@ -18,9 +19,10 @@ var darkmode = {
         const currentTheme = localStorage.getItem('theme') || darkmode.classes.lightTheme;
         $(darkmode.elements.html).attr('class', currentTheme);
 
-        // Update the navbar and main content classes based on the theme
+        // Update the navbar, main content, and chat component classes based on the theme
         darkmode.updateNavbarClass(currentTheme);
         darkmode.updateMainContentClass(currentTheme);
+        darkmode.updateChatComponentTheme(currentTheme);
     },
     toggle: function() {
         const $html = $(darkmode.elements.html);
@@ -32,11 +34,13 @@ var darkmode = {
             localStorage.setItem('theme', darkmode.classes.lightTheme);
             darkmode.updateNavbarClass(darkmode.classes.lightTheme);
             darkmode.updateMainContentClass(darkmode.classes.lightTheme);
+            darkmode.updateChatComponentTheme(darkmode.classes.lightTheme);
         } else {
             $html.removeClass(darkmode.classes.lightTheme).addClass(darkmode.classes.darkTheme);
             localStorage.setItem('theme', darkmode.classes.darkTheme);
             darkmode.updateNavbarClass(darkmode.classes.darkTheme);
             darkmode.updateMainContentClass(darkmode.classes.darkTheme);
+            darkmode.updateChatComponentTheme(darkmode.classes.darkTheme);
         }
     },
     updateNavbarClass: function(theme) {
@@ -58,15 +62,43 @@ var darkmode = {
                 $mainContent.removeClass(darkmode.classes.mainContentDark).addClass(darkmode.classes.mainContentLight);
             }
         }
+    },
+    updateChatComponentTheme: function(theme) {
+        const $chatComponent = $(darkmode.elements.chatComponent);
+        if ($chatComponent.length) { // Check if the chat component exists
+            if (theme === darkmode.classes.darkTheme) {
+                $chatComponent.css({
+                    '--text-color': '#fff',
+                    '--border-color': '#444',
+                    '--header-background-color': '#3a3a3a',
+                    '--button-background-color': '#444',
+                    '--button-active-background-color': '#555',
+                    '--button-hover-background-color': '#555',
+                    '--icon-color': '#ccc',
+                    '--hover-background-color': '#333',
+                });
+            } else {
+                $chatComponent.css({
+                    '--text-color': '#333',
+                    '--border-color': '#ddd',
+                    '--header-background-color': '#f5f5f5',
+                    '--button-background-color': '#eaeaea',
+                    '--button-active-background-color': '#4a4a4a',
+                    '--button-hover-background-color': '#d4d4d4',
+                    '--icon-color': '#4a4a4a',
+                    '--hover-background-color': '#f5f5f5',
+                });
+            }
+        }
     }
 };
 
 // Initialize dark mode on page load
-document.addEventListener('DOMContentLoaded', function() {
+$(document).ready(function() {
     darkmode.init();
 
     // Attach the toggle function to the button click
-    document.querySelector(darkmode.elements.darkmodeToggle).addEventListener('click', function() {
+    $(darkmode.elements.darkmodeToggle).on('click', function() {
         darkmode.toggle();
     });
 });

@@ -1,5 +1,5 @@
 <!-- filepath: c:\xampp_8\htdocs\social-forum-systems\app\Views\components\navbar.php -->
-<nav class="navbar is-link" id="navbar" role="navigation" aria-label="main navigation" x-data="{ isActive: false }">
+<nav class="navbar" id="navbar" role="navigation" aria-label="main navigation" x-data="{ isActive: false }">
     <div class="navbar-brand">
         <a class="navbar-item" href="https://bulma.io">
             <svg width="640" height="160" viewBox="0 0 640 160" fill="none" xmlns="http://www.w3.org/2000/svg">
