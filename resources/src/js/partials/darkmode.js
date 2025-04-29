@@ -14,7 +14,7 @@ var darkmode = {
         navbarDark: 'is-dark',
         mainContentLight: 'has-background-white-ter',
         mainContentDark: 'has-background-black-ter',
-        chatColumnLight: 'has-background-grey-lighter',
+        chatColumnLight: 'has-background-white-bis',
         chatColumnDark: 'has-background-grey-darker',
     },
     updateNavbarClass: function(theme) {
@@ -109,6 +109,7 @@ var darkmode = {
         darkmode.updateNavbarClass(currentTheme);
         darkmode.updateMainContentClass(currentTheme);
         darkmode.updateChatComponentTheme(currentTheme);
+        darkmode.updateChatColumnClass(currentTheme);
     },
 };
 

@@ -38,7 +38,7 @@
                 x-show="!isChatVisible" 
                 @click="isChatVisible = true" 
                 x-transition
-                style="position: absolute; top: 4.12rem; right: .25rem; z-index: 1000;"
+                style="position: absolute; top: 4.12rem; right: .25rem;"
             >
                 <span class="icon">
                     <i class="fas fa-chevron-left"></i>
