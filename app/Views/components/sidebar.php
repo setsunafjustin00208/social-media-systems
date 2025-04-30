@@ -224,4 +224,6 @@
         </a>
     </li>
   </ul>
+  
+</script>
 </aside>

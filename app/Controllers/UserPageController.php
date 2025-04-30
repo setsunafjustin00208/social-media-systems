@@ -35,7 +35,6 @@ class UserPageController extends BaseController
                 'dist/js/components/footer.min.js',
                 'dist/js/components/navbar.min.js',
                 'dist/js/components/chat-component.min.js',
-                'dist/js/components/sidebar-small.min.js',
             ],
         ];
 

@@ -1,4 +1,5 @@
 <aside class="menu p-3 has-text-centered">
+    <script src="<?php echo base_url('dist/js/components/sidebar-small.min.js')?>"></script>
   <p class="menu-label">
     <span class="icon">
         <i class="fa-lg far fa-user-circle"></i>
@@ -6,51 +7,51 @@
     Personal
   </p>
   
-  <ul class="menu-list">
+  <ul class="menu-list sidebar-small">
     <li>
-        <a class="has-text-centered" data-tooltip="Home">
+        <a class="has-text-centered sidebar-small-item" data-tooltip="Home">
             <span class="icon is-large">
                 <i class="fas fa-lg fa-home"></i>
             </span>
         </a>
     </li>
     <li>
-        <a class="has-text-centered" data-tooltip="Your Characters">
+        <a class="has-text-centered sidebar-small-item" data-tooltip="Your Characters">
             <span class="icon is-large">
                 <i class="fas fa-lg fa-users-between-lines"></i>
             </span>
         </a>
     </li>
     <li>
-        <a class="has-text-centered" data-tooltip="Your Lores">
+        <a class="has-text-centered sidebar-small-item" data-tooltip="Your Lores">
             <span class="icon is-large">
                 <i class="fas fa-lg fa-book-journal-whills"></i>
             </span>
         </a>
     </li>
     <li>
-        <a class="has-text-centered" data-tooltip="Your World Building">
+        <a class="has-text-centered sidebar-small-item" data-tooltip="Your World Building">
             <span class="icon is-large">
                 <i class="fas fa-lg fa-book-atlas"></i>
             </span>
         </a>
     </li>
     <li>
-        <a class="has-text-centered" data-tooltip="Your Vehicles">
+        <a class="has-text-centered sidebar-small-item" data-tooltip="Your Vehicles">
             <span class="icon is-large">
                 <i class="fas fa-car-side"></i>
             </span>
         </a>
     </li>
     <li>
-        <a class="has-text-centered" data-tooltip="Your NPCs">
+        <a class="has-text-centered sidebar-small-item" data-tooltip="Your NPCs">
             <span class="icon is-large">
                 <i class="fa-lg fab fa-grunt"></i>
             </span>
         </a>
     </li>
     <li>
-        <a class="has-text-centered" data-tooltip="Your Entries">
+        <a class="has-text-centered sidebar-small-item" data-tooltip="Your Entries">
             <span class="icon is-large">
                 <i class="fa-lg fas fa-notes-medical"></i>
             </span>
@@ -63,37 +64,37 @@
     </span>
     Roleplay
   </p>
-  <ul class="menu-list">
+  <ul class="menu-list sidebar-small">
     <li>
-        <a class="has-text-centered" data-tooltip="Calendar">
+        <a class="has-text-centered sidebar-small-item" data-tooltip="Events">
             <span class="icon is-large">
                 <i class="fas fa-lg fa-calendar-days"></i>
             </span>
         </a>
     </li>
     <li>
-        <a class="has-text-centered has-dropdown" data-tooltip="Jedi">
+        <a class="has-text-centered sidebar-small-item" data-tooltip="Factions">
             <span class="icon is-large">
                 <i class="fas fa-lg fa-jedi"></i>
             </span>
         </a>
     </li>
     <li>
-        <a class="has-text-centered" data-tooltip="Pied Piper">
+        <a class="has-text-centered sidebar-small-item" data-tooltip="Arcs">
             <span class="icon is-large">
                 <i class="fab fa-lg fa-pied-piper-alt"></i>
             </span>
         </a>
     </li>
     <li>
-        <a class="has-text-centered" data-tooltip="Open Book">
+        <a class="has-text-centered sidebar-small-item" data-tooltip="Plots">
             <span class="icon is-large">
                 <i class="fas fa-lg fa-book-open"></i>
             </span>
         </a>
     </li>
     <li>
-        <a class="has-text-centered" data-tooltip="Globe">
+        <a class="has-text-centered sidebar-small-item" data-tooltip="Dimensions and Worlds">
             <span class="icon is-large">
                 <i class="fas fa-lg fa-globe"></i>
             </span>
@@ -106,65 +107,65 @@
     </span>
     Admin
   </p>
-  <ul class="menu-list">
+  <ul class="menu-list sidebar-small">
     <li>
-        <a class="has-text-centered" data-tooltip="User Rays">
+        <a class="has-text-centered sidebar-small-item" data-tooltip="Manage Users">
             <span class="icon is-large">
                 <i class="fas fa-lg fa-users-rays"></i>
             </span>
         </a>
     </li>
     <li>
-        <a class="has-text-centered" data-tooltip="User Line">
+        <a class="has-text-centered sidebar-small-item" data-tooltip="Manage Characters">
             <span class="icon is-large">
                 <i class="fas fa-lg fa-users line"></i>
             </span>
         </a>
     </li>
     <li>
-        <a class="has-text-centered" data-tooltip="User Rectangle">
+        <a class="has-text-centered sidebar-small-item" data-tooltip="Manage Factions">
             <span class="icon is-large">
                 <i class="fas fa-lg fa-users-rectangle"></i>
             </span>
         </a>
     </li>
     <li>
-        <a class="has-text-centered" data-tooltip="Keyboard">
+        <a class="has-text-centered sidebar-small-item" data-tooltip="Manage Entries">
             <span class="icon is-large">
                 <i class="fas fa-lg fa-keyboard"></i>
             </span>
         </a>
     </li>
     <li>
-        <a class="has-text-centered" data-tooltip="Bookmarks">
+        <a class="has-text-centered sidebar-small-item" data-tooltip="Manage Lore">
             <span class="icon is-large">
                 <i class="fas fa-lg fa-book-bookmark"></i>
             </span>
         </a>
     </li>
     <li>
-        <a class="has-text-centered" data-tooltip="Books">
+        <a class="has-text-centered sidebar-small-item" data-tooltip="Manage World Building">
             <span class="icon is-large">
                 <i class="fas fa-lg fa-book"></i>
             </span>
         </a>
     </li>
     <li>
-        <a class="has-text-centered" data-tooltip="Quran">
+        <a class="has-text-centered sidebar-small-item" data-tooltip="Manage Plots & Arcs">
             <span class="icon is-large">
                 <i class="fas fa-lg fa-book-quran"></i>
             </span>
         </a>
     </li>
     <li>
-        <a class="has-text-centered" data-tooltip="Chart Column">
+        <a class="has-text-centered sidebar-small-item" data-tooltip="Monitor Activities">
             <span class="icon is-large">
                 <i class="fas fa-lg fa-chart-column"></i>
             </span>
         </a>
     </li>
     <li>
-        <a class="has-text-centered" data-tooltip="Envelope">
+        <a class="has-text-centered sidebar-small-item" data-tooltip="Suggestions & Feedback">
             <span class="icon is-large">
                 <i class="fas fa-lg fa-envelope-open-text"></i>
             </span>
@@ -175,28 +176,29 @@
     <span class="icon">
         <i class="fa-lg fas fa-user-tie"></i>
     </span>
-    S Admin
+    Spr Admin
   </p>
-  <ul class="menu-list">
+  <ul class="menu-list sidebar-small">
     <li>
-        <a class="has-text-centered" data-tooltip="Chart Column">
+        <a class="has-text-centered sidebar-small-item" data-tooltip="Manage Admins">
             <span class="icon is-large">
                 <i class="fas fa-lg fa-chart-column"></i>
             </span>
         </a>
     </li>
     <li>
-        <a class="has-text-centered" data-tooltip="Adversal">
+        <a class="has-text-centered sidebar-small-item" data-tooltip="Manage Ads">
             <span class="icon is-large">
                 <i class="fa-lg fab fa-adversal"></i>
             </span>
         </a>
     </li>
     <li>
-        <a class="has-text-centered" data-tooltip="Chart Pie">
+        <a class="has-text-centered sidebar-small-item" data-tooltip="Statistics & Reports">
             <span class="icon is-large">
                 <i class="fa-lg fas fa-chart-pie"></i>
             </span>
         </a>
     </li>
   </ul>
+</aside>
