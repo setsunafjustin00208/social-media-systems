@@ -1,16 +1,21 @@
 <?php echo $this->extend('default'); ?>
 <?php echo $this->section('content'); ?>
     <?php echo $this->include('components/navbar'); ?>
-        <div class="columns is-gapless" x-data="{ isSidebarSmallVisible: false, isChatVisible: true }">
+        <div class="columns is-gapless" x-data="{ 
+            isSidebarSmallVisible: localStorage.getItem('isSidebarSmallVisible') === 'true', 
+            isChatVisible: true 
+        }" 
+        x-init="
+            $watch('isSidebarSmallVisible', value => localStorage.setItem('isSidebarSmallVisible', value))
+        ">
             <!-- Sidebar -->
             <div 
                 class="column is-7-mobile is-5-tablet is-hidden-touch sidebar" 
                 :class="isSidebarSmallVisible 
                     ? 'is-1-widescreen is-1-desktop' 
                     : 'is-2-widescreen is-2-desktop'"
-                
+                    x-transition
             >
-
                 <div class="has-text-right">
                     <button 
                         class="button is-small toggle-sidebar-button has-text-right" 
@@ -23,7 +28,6 @@
                     </button>
                 </div>
                 <!-- Toggle Button for Sidebar -->
-
 
                 <template x-if="!isSidebarSmallVisible">
                     <?php echo $this->include('components/sidebar'); ?>
