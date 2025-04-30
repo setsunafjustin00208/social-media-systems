@@ -13,7 +13,7 @@
 
 
 <script src="<?php echo base_url('dist/modules/js/cdn.min.js'); ?>" defer></script>
-<script src="<?php echo base_url('dist/modules/js/jquery.min.js'); ?>" defer></script>
+<script src="<?php echo base_url('dist/modules/js/jquery.min.js'); ?>"></script>
 <script src="<?php echo base_url('dist/modules/js/floating-ui.core.umd.min.js'); ?>" defer></script>
 <script src="<?php echo base_url('dist/modules/js/floating-ui.dom.umd.min.js'); ?>" defer></script>
 <script src="<?php echo base_url('dist/js/default.min.js'); ?>" defer></script>

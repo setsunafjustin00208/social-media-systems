@@ -25,16 +25,17 @@ class UserPageController extends BaseController
             'keywords' => 'user, page, keywords',
             'styles' => [
                 'dist/css/components/sidebar.min.css',
+                'dist/css/components/sidebar-small.min.css',
                 'dist/css/components/footer.min.css',
                 'dist/css/components/navbar.min.css',
                 'dist/css/components/chatsWidget.min.css',
                 'dist/css/components/chat-component.min.css',
-                'dist/css/pages/user-page.min.css',
             ],
             'scripts' => [
                 'dist/js/components/footer.min.js',
                 'dist/js/components/navbar.min.js',
                 'dist/js/components/chat-component.min.js',
+                'dist/js/components/sidebar-small.min.js',
             ],
         ];
 

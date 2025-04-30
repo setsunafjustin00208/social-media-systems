@@ -1,11 +1,39 @@
-<!-- filepath: c:\xampp_8\htdocs\social-forum-systems\app\Views\pages\userHomePage.php -->
 <?php echo $this->extend('default'); ?>
 <?php echo $this->section('content'); ?>
     <?php echo $this->include('components/navbar'); ?>
-        <div class="columns is-gapless" x-data="{ isChatVisible: true }">
-            <div class="column is-7-mobile is-2-desktop is-5-tablet is-2-widescreen is-hidden-touch sidebar">
-                <?php echo $this->include('components/sidebar'); ?>
+        <div class="columns is-gapless" x-data="{ isSidebarSmallVisible: false, isChatVisible: true }">
+            <!-- Sidebar -->
+            <div 
+                class="column is-7-mobile is-5-tablet is-hidden-touch sidebar" 
+                :class="isSidebarSmallVisible 
+                    ? 'is-1-widescreen is-1-desktop' 
+                    : 'is-2-widescreen is-2-desktop'"
+                
+            >
+
+                <div class="has-text-right">
+                    <button 
+                        class="button is-small toggle-sidebar-button has-text-right" 
+                        @click="isSidebarSmallVisible = !isSidebarSmallVisible" 
+                        x-transition
+                    >
+                        <span class="icon">
+                            <i class="fas" :class="isSidebarSmallVisible ? 'fa-chevron-right' : 'fa-chevron-left'"></i>
+                        </span>
+                    </button>
+                </div>
+                <!-- Toggle Button for Sidebar -->
+
+
+                <template x-if="!isSidebarSmallVisible">
+                    <?php echo $this->include('components/sidebar'); ?>
+                </template>
+                <template x-if="isSidebarSmallVisible">
+                    <?php echo $this->include('components/sidebar-small'); ?>
+                </template>
             </div>
+
+            <!-- Main Content -->
             <div id="main-content" class="column has-background-white-ter">
                 <section class="container">
                     <?php echo $this->renderSection('content'); ?>
@@ -18,7 +46,7 @@
                 x-show="isChatVisible" 
                 x-transition
             >
-                <!-- Toggle Button to Hide Column -->
+                <!-- Toggle Button to Hide Chat -->
                 <button 
                     class="button is-small mb-3 hide-chat-button" 
                     @click="isChatVisible = false"

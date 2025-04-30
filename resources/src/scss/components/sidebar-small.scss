@@ -1,0 +1,14 @@
+.floating-tooltip {
+    background-color: #333; /* Dark background */
+    color: #fff; /* White text */
+    padding: 8px 12px; /* Padding for better readability */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 0.875rem; /* Slightly smaller font size */
+    font-weight: 500; /* Medium font weight */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    opacity: 0; /* Hidden by default */
+    pointer-events: none; /* Prevent interaction */
+    white-space: nowrap; /* Prevent text wrapping */
+    transform: translateX(0px); /* Initial position */
+    transition: opacity 0.2s ease, transform 0.2s ease; /* Smooth animation */
+}
