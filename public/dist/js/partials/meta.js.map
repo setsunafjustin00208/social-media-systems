@@ -1,1 +1,0 @@
-{"version":3,"file":"meta.js","sources":["partials/meta.js"],"sourcesContent":["var meta = {\n    init: function() {\n        // Initialize your script here\n    }\n};"],"names":["meta","init"],"mappings":"AAAA,IAAIA,KAAO,CACPC,KAAM,YAGV"}

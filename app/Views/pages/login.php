@@ -8,10 +8,13 @@
                         <form action="" class="box is-justify-content-center login-box" id="login">
                             <div class="field">
                                 <label for="" class="label">Email</label>
-                                    <div class="control has-icons-left">
+                                    <div class="control has-icons-left has-icons-right">
                                         <input type="email" id="email-address" placeholder="e.g. bobsmith@gmail.com" class="input" required>
                                         <span class="icon is-small is-left">
                                             <i class="fa fa-envelope"></i>
+                                        </span>
+                                        <span class="icon is-small is-right">
+                                            <i class="fa" id="email-icon-right"></i>
                                         </span>
                                     </div>
                                 </div>
@@ -23,14 +26,17 @@
                                             <i class="fa fa-lock"></i>
                                         </span>
                                         <span class="icon is-small is-right">
-                                            <i class="fa fa-eye toggle-password-visibiliy" id="toggle-password-visibility"></i>
+                                            <i class="fa" id="password-icon-right"></i>
                                         </span>
                                     </div>
                                 </div>
                                 <div class="field">
-                                    <label for="" class="checkbox">
+                                    <label for="" class="checkbox ">
                                         <input type="checkbox" id="remember-me">
-                                        Remember me
+                                        <span class="has-text-light remember-me-label" id="remember-me-label">
+                                            Remember me
+                                        </span>
+                                        
                                     </label>
                                 </div>
                                 <div class="field">

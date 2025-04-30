@@ -3,6 +3,7 @@ const sass = require('gulp-sass')(require('sass'));
 const cleanCSS = require('gulp-clean-css');
 const uglify = require('gulp-uglify');
 const concat = require('gulp-concat');
+const rename = require('gulp-rename'); // Add rename for .min suffix
 const sourcemaps = require('gulp-sourcemaps');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
@@ -13,11 +14,11 @@ const paths = {
     js: './src/js/**/*.js',       // Source JavaScript files
     cssOutput: '../public/dist/css',   // Output folder for CSS (relative to resources)
     jsOutput: '../public/dist/js',     // Output folder for JavaScript (relative to resources)
-    vendorOutputJS: '../public/dist/vendor/js', // Output folder for vendor libraries (relative to resources)
-    vendorOutputCSS: '../public/dist/vendor/css', // Output folder for vendor libraries (relative to resources)
+    vendorOutputJS: '../public/dist/modules/js', // Output folder for vendor libraries (relative to resources)
+    vendorOutputCSS: '../public/dist/modules/css', // Output folder for vendor libraries (relative to resources)
 };
 
-// Compile SCSS to CSS
+// Compile SCSS to Minified CSS with .min suffix
 function compileSCSS() {
     return gulp
         .src(paths.scss)
@@ -28,11 +29,12 @@ function compileSCSS() {
         }))
         .pipe(postcss([autoprefixer()]))
         .pipe(cleanCSS())
+        .pipe(rename({ suffix: '.min' })) // Add .min suffix
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(paths.cssOutput));
 }
 
-// Minify and Process Each JavaScript File Individually
+// Minify JavaScript Files with .min suffix
 function minifyJS() {
     return gulp
         .src(paths.js)
@@ -41,6 +43,7 @@ function minifyJS() {
             console.error(err.message); // Log the error
             this.emit('end'); // Prevent Gulp from stopping
         }))
+        .pipe(rename({ suffix: '.min' })) // Add .min suffix
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(paths.jsOutput)); // Output each file individually
 }
@@ -49,20 +52,29 @@ function minifyJS() {
 function copyVendors() {
     // Alpine.js
     gulp.src('./node_modules/alpinejs/dist/cdn.min.js')
+        .pipe(rename({ suffix: '' })) // Ensure no double .min.min
         .pipe(gulp.dest(paths.vendorOutputJS));
 
     // jQuery
     gulp.src('./node_modules/jquery/dist/jquery.min.js')
+        .pipe(rename({ suffix: '' })) // Ensure no double .min.min
         .pipe(gulp.dest(paths.vendorOutputJS));
 
     // Floating UI (UMD version)
     gulp.src('./node_modules/@floating-ui/dom/dist/floating-ui.dom.umd.min.js')
+        .pipe(rename({ suffix: '' })) // Ensure no double .min.min
+        .pipe(gulp.dest(paths.vendorOutputJS));
+
+    gulp.src('./node_modules/@floating-ui/core/dist/floating-ui.core.umd.min.js')
+        .pipe(rename({ suffix: '' })) // Ensure no double .min.min
         .pipe(gulp.dest(paths.vendorOutputJS));
         
     gulp.src('./node_modules/sweetalert2/dist/sweetalert2.all.min.js')
+        .pipe(rename({ suffix: '' })) // Ensure no double .min.min
         .pipe(gulp.dest(paths.vendorOutputJS));
 
     gulp.src('./node_modules/sweetalert2/dist/sweetalert2.min.css')
+        .pipe(rename({ suffix: '' })) // Ensure no double .min.min
         .pipe(gulp.dest(paths.vendorOutputCSS));
 
     return Promise.resolve(); // Ensure the task completes

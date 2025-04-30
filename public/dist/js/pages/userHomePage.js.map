@@ -1,1 +1,0 @@
-{"version":3,"file":"userHomePage.js","sources":["pages/userHomePage.js"],"sourcesContent":["var userHomePage = {\n    init: function() {\n        // Initialize your script here\n    }\n};"],"names":["userHomePage","init"],"mappings":"AAAA,IAAIA,aAAe,CACfC,KAAM,YAGV"}

@@ -65,7 +65,7 @@
                             <span class="icon is-small"><i class="fas fa-user-tie"></i></span>
                             Profile
                         </a>
-                        <a class="navbar-item">
+                        <a href="<?php echo base_url('/account/logout') ?>" class="navbar-item">
                             <span class="icon is-small"><i class="fas fa-arrow-right-to-bracket"></i></span>
                             Logout
                         </a>

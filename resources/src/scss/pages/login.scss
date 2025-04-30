@@ -13,6 +13,60 @@
     color: #fff;
 }
 
+.floating-error-tooltip {
+    position: absolute;
+    background-color: #f44336; // Red background for errors
+    color: #fff; // White text for contrast
+    padding: .75rem 1rem .75rem 0rem; // Add padding for better readability
+    border-radius: 6px; // Rounded corners
+    font-size: 1rem; // Slightly larger font size
+    font-weight: 600; // Bold font for emphasis
+    max-width: 300px; // Limit the width of the tooltip
+    word-wrap: break-word; // Ensure long messages wrap to the next line
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); // Subtle shadow for depth
+    z-index: 1000;
+    opacity: 0; // Initially hidden
+    transform: translateY(-10px); // Slightly offset for animation
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; // Smooth fade-in and slide-in
+    display: flex; // Align icon and text horizontally
+    align-items: center; // Center icon and text vertically
+    gap: 8px; // Add spacing between the icon and the text
+
+    .tooltip-message {
+        font-size: 1rem; // Adjust font size for readability
+        font-weight: 500; // Medium font weight for better emphasis
+        color: inherit; // Inherit the text color from the parent tooltip
+        margin-left: 2rem; // Add spacing between the icon and the message
+        line-height: 1.4; // Improve line spacing for multi-line messages
+        word-wrap: break-word; // Ensure long messages wrap to the next line
+    }
+
+    .tooltip-icon {
+       margin-top: .25rem; // Center the icon vertically with the text
+    }
+}
+
+// Show the tooltip when visible
+.floating-error-tooltip.is-visible {
+    opacity: 1;
+    transform: translateY(0); // Reset the offset
+}
+
+// Add a small arrow to the tooltip
+.floating-error-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -10px; // Adjust based on tooltip placement
+    transform: translateY(-50%);
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent #f44336 transparent transparent; // Arrow pointing left
+}
+
+
+
+// Password visibility toggle
 .toggle-password-visibiliy {
     cursor: pointer;
 }

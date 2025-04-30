@@ -25,24 +25,6 @@ class UserController extends BaseController
     {
         $this->userModel = new UserModel();
         $this->session = session();
-
-        // $this->username = null !== $this->request->getPost('username') ? $this->request->getPost('username') : null;
-        // $this->email = null !== $this->request->getPost('email') ? $this->request->getPost('email') : null;
-        // $this->password = null !== $this->request->getPost('password') ? $this->request->getPost('password') : null;
-        // $this->confirmPassword = null !== $this->request->getPost('confirm_password') ? $this->request->getPost('confirm_password') : null;
-        // $this->userId = null !== $this->request->getPost('user_id') ? $this->request->getPost('user_id') : null;
-        // $this->userData = null !== $this->request->getPost('user_data') ? $this->request->getPost('user_data') : null;
-        // $this->userDataArray = json_decode($this->userData, true);
-        
-        // if (is_null($this->userDataArray)) {
-        //     $this->userDataArray = [];
-        // }
-        
-        // $this->privileges = null !== $this->request->getPost('privileges') ? $this->request->getPost('privileges') : null;
-        // if (is_null($this->privileges)) {
-        //     $this->privileges = [];
-        // }
-
     }
     public function index()
     {
@@ -51,26 +33,23 @@ class UserController extends BaseController
             'description' => 'Login to your account',
             'keywords' => 'login, user, account',
             'styles' => Array (
-                'dist/vendor/css/sweetalert2.min.css',
-                'dist/css/default.css',
-                'dist/css/global.css',
-                'dist/css/components/footer.css',
-                'dist/css/components/navbar.css',
-                'dist/css/pages/login.css',
-                'dist/css/pages/index.css',
+                'dist/css/components/footer.min.css',
+                'dist/css/components/navbar.min.css',
+                'dist/css/pages/login.min.css',
             ),
             'scripts' => Array(
-                'dist/vendor/js/cdn.min.js',
-                'dist/vendor/js/jquery.min.js',
-                'dist/vendor/js/floating-ui.dom.umd.min.js',
-                'dist/js/default.js',
-                'dist/js/global.js',
-                'dist/js/components/footer.js',
-                'dist/js/components/navbar.js',
-                'dist/js/pages/login.js',
-                'dist/js/pages/index.js',
+                'dist/js/components/footer.min.js',
+                'dist/js/components/navbar.min.js',
+                'dist/js/pages/login.min.js',
             ),
         );
+        $data['session'] = $this->session->get();
+
+        if (isset($data['session']['is_logged_in'])) {
+            return redirect()->to('/roleplay/home');
+        }
+
+        // Check if the user is already logged in
         echo view('pages/login', $data);
     }
 
@@ -78,6 +57,8 @@ class UserController extends BaseController
     {
         $this->email = $this->request->getPost('email');
         $this->password = $this->request->getPost('password');
+
+
         
         if (!filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
             return $this->response->setStatusCode(ResponseInterface::HTTP_BAD_REQUEST)
@@ -144,5 +125,11 @@ class UserController extends BaseController
         } else {
             return $this->fail('Failed to register user');
         }
+    }
+
+    public function logout()
+    {
+        $this->session->destroy();
+        return redirect()->to('/account/login');
     }
 }

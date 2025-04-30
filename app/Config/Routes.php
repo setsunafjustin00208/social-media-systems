@@ -14,6 +14,7 @@ $routes->group('account', function ($routes) {
     $routes->post('login-account', 'UserController::login');
     $routes->get('register', 'UserController::register');
     $routes->post('register', 'UserController::register');
+    $routes->get('logout', 'UserController::logout');
     $routes->get('forgot-password', 'UserController::forgotPassword');
     $routes->post('forgot-password', 'UserController::forgotPassword');
     $routes->get('reset-password/(:any)', 'UserController::resetPassword/$1');

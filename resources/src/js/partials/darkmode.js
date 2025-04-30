@@ -6,6 +6,7 @@ var darkmode = {
         darkmodeToggle: '#darkmode-toggle',
         chatComponent: '#chat-componet',
         chatColumn: '.chat-column',
+        rememberMeLabel: '.remember-me-label',
     },
     classes: {
         lightTheme: 'theme-light',
@@ -16,6 +17,8 @@ var darkmode = {
         mainContentDark: 'has-background-black-ter',
         chatColumnLight: 'has-background-white-bis',
         chatColumnDark: 'has-background-grey-darker',
+        rememberMeLabelLight: 'has-text-dark',
+        rememberMeLabelDark: 'has-text-light',
     },
     updateNavbarClass: function(theme) {
         const $navbar = $(darkmode.elements.navbar);
@@ -44,6 +47,17 @@ var darkmode = {
                 $chatColumnClass.removeClass(darkmode.classes.chatColumnLight).addClass(darkmode.classes.chatColumnDark);
             } else {
                 $chatColumnClass.removeClass(darkmode.classes.chatColumnDark).addClass(darkmode.classes.chatColumnLight);
+            }
+        }
+    },
+    updateRememberMeLabel: function(theme) {
+        const $rememberMeLabel = $(darkmode.elements.rememberMeLabel);
+        console.log($rememberMeLabel);
+        if ($rememberMeLabel.length) { // Check if the main content exists
+            if (theme === darkmode.classes.darkTheme) {
+                $rememberMeLabel.removeClass(darkmode.classes.rememberMeLabelLight).addClass(darkmode.classes.rememberMeLabelDark);
+            } else {
+                $rememberMeLabel.removeClass(darkmode.classes.rememberMeLabelDark).addClass(darkmode.classes.rememberMeLabelLight);
             }
         }
     },
@@ -89,6 +103,7 @@ var darkmode = {
                 darkmode.updateMainContentClass(darkmode.classes.lightTheme);
                 darkmode.updateChatComponentTheme(darkmode.classes.lightTheme);
                 darkmode.updateChatColumnClass(darkmode.classes.lightTheme);
+                darkmode.updateRememberMeLabel(darkmode.classes.lightTheme);
             } else {
                 $html.removeClass(darkmode.classes.lightTheme).addClass(darkmode.classes.darkTheme);
                 localStorage.setItem('theme', darkmode.classes.darkTheme);
@@ -96,6 +111,7 @@ var darkmode = {
                 darkmode.updateMainContentClass(darkmode.classes.darkTheme);
                 darkmode.updateChatComponentTheme(darkmode.classes.darkTheme);
                 darkmode.updateChatColumnClass(darkmode.classes.darkTheme);
+                darkmode.updateRememberMeLabel(darkmode.classes.darkTheme);
             }
         },
     },
@@ -110,6 +126,7 @@ var darkmode = {
         darkmode.updateMainContentClass(currentTheme);
         darkmode.updateChatComponentTheme(currentTheme);
         darkmode.updateChatColumnClass(currentTheme);
+        darkmode.updateRememberMeLabel(currentTheme);
     },
 };
 

@@ -1,1 +1,0 @@
-{"version":3,"file":"navbar.js","sources":["components/navbar.js"],"sourcesContent":["var navbar = {\n    init: function() {\n        // Initialize your script here\n    }\n};"],"names":["navbar","init"],"mappings":"AAAA,IAAIA,OAAS,CACTC,KAAM,YAGV"}
