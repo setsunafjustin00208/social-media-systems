@@ -46,7 +46,7 @@
 
             <!-- Chat Column -->
             <div 
-                class="column is-7-mobile is-2-desktop is-5-tablet is-2-widescreen is-hidden-touch chat-column has-background-grey-darker" 
+                class="column is-7-mobile is-3-desktop is-5-tablet is-3-widescreen is-hidden-touch chat-column has-background-grey-darker" 
                 x-show="isChatVisible" 
                 x-transition
             >

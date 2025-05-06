@@ -89,8 +89,8 @@
                                 x-transition:leave="transition ease-in duration-300"
                                 x-transition:leave-start="opacity-100 scale-100"
                                 x-transition:leave-end="opacity-0 scale-75"
-                                class="floating-reactions box p-2"
-                                style="position: absolute; z-index: 1000; display: flex; gap: 1.75rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); top: 8rem; left: 0;"
+                                class="floating-reactions box p-3"
+                                style="position: absolute; z-index: 1000; display: flex; gap: 2rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); top: 8rem; left: 0;"
                             >
                                 <span @click="react(post, 'like')" style="cursor: pointer; font-size: 1.5rem;">
                                     <i class="fas fa-thumbs-up has-text-info"></i>
