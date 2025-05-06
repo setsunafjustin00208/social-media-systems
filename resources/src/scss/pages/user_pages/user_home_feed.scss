@@ -1,0 +1,42 @@
+.user_home_feed {
+    // Add your styles here
+
+    .post {
+        margin-bottom: 1.5rem;
+        border: 1px solid #e6e6e6;
+        border-radius: 8px;
+    }
+    .post-header {
+        padding: 1rem;
+    }
+    .post-content {
+        padding: 0 1rem 1rem;
+    }
+    .post-image {
+        width: 100%;
+    }
+    .post-actions {
+        border-top: 1px solid #e6e6e6;
+        border-bottom: 1px solid #e6e6e6;
+        padding: 0.5rem 1rem;
+    }
+    .comments {
+        padding: 1rem;
+    }
+    .comment {
+        margin-bottom: 0.5rem;
+    }
+    .sidebar-item {
+        padding: 0.5rem 0;
+    }
+
+    .post-actions {
+
+        span {
+            cursor: pointer;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

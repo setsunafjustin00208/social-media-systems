@@ -1,0 +1,28 @@
+// _screen-sizes.scss
+
+// Mixin for screen sizes
+@mixin screen-size($size) {
+    @if $size == small {
+        @media (max-width: 576px) {
+            @content;
+        }
+    } @else if $size == medium {
+        @media (min-width: 577px) and (max-width: 768px) {
+            @content;
+        }
+    } @else if $size == large {
+        @media (min-width: 769px) and (max-width: 992px) {
+            @content;
+        }
+    } @else if $size == xlarge {
+        @media (min-width: 993px) and (max-width: 1200px) {
+            @content;
+        }
+    } @else if $size == xxlarge {
+        @media (min-width: 1201px) {
+            @content;
+        }
+    } @else {
+        @warn "Unknown screen size: #{$size}.";
+    }
+}

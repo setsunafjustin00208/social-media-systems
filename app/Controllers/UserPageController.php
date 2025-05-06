@@ -36,6 +36,8 @@ class UserPageController extends BaseController
                 'dist/js/components/navbar.min.js',
                 'dist/js/components/chat-component.min.js',
             ],
+
+            'activePage' => 'home', // Pass the active page name here
         ];
 
         $data['session'] = $this->session->get();
@@ -44,6 +46,6 @@ class UserPageController extends BaseController
             return redirect()->to('/account/login');
         }
 
-        return view('pages/userHomePage', $data);
+        return view('pages/user_pages/user_home_feed', $data);
     }
 }

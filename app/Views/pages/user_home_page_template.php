@@ -22,17 +22,17 @@
                         @click="isSidebarSmallVisible = !isSidebarSmallVisible" 
                         x-transition
                     >
-                        <span class="icon">
+                        <span class="icon" x-transition>
                             <i class="fas" :class="isSidebarSmallVisible ? 'fa-chevron-right' : 'fa-chevron-left'"></i>
                         </span>
                     </button>
                 </div>
                 <!-- Toggle Button for Sidebar -->
 
-                <template x-if="!isSidebarSmallVisible">
+                <template x-if="!isSidebarSmallVisible" x-transition>
                     <?php echo $this->include('components/sidebar'); ?>
                 </template>
-                <template x-if="isSidebarSmallVisible">
+                <template x-if="isSidebarSmallVisible" x-transition>
                     <?php echo $this->include('components/sidebar-small'); ?>
                 </template>
             </div>
