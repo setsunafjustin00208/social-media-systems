@@ -1,5 +1,6 @@
 <?php echo $this->extend('default'); ?>
 <?php echo $this->section('content'); ?>
+    <link rel="stylesheet" href="<?php echo base_url('dist/css/pages/user_home_page_template.min.css'); ?>">
     <?php echo $this->include('components/navbar'); ?>
         <div class="columns is-gapless" x-data="{ 
             isSidebarSmallVisible: localStorage.getItem('isSidebarSmallVisible') === 'true', 
@@ -14,7 +15,7 @@
                 :class="isSidebarSmallVisible 
                     ? 'is-1-widescreen is-1-desktop' 
                     : 'is-2-widescreen is-2-desktop'"
-                    x-transition
+                x-transition
             >
                 <div class="has-text-right">
                     <button 

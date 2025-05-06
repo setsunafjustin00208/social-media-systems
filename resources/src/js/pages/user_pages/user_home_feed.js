@@ -22,6 +22,30 @@ document.addEventListener('alpine:init', () => {
                     liked: false,
                     reaction: null,
                 },
+                {
+                    id: 3,
+                    author: 'Sophia Martinez',
+                    timestamp: '2 days ago',
+                    content: 'Had an amazing dinner at this new Italian restaurant downtown. Highly recommend it! 🍝 #foodie #yum',
+                    liked: false,
+                    reaction: null,
+                },
+                {
+                    id: 4,
+                    author: 'Liam Johnson',
+                    timestamp: '4 days ago',
+                    content: 'Finally finished reading that book everyone’s been talking about. It was worth the hype! 📚 #bookworm',
+                    liked: false,
+                    reaction: null,
+                },
+                {
+                    id: 5,
+                    author: 'Olivia Brown',
+                    timestamp: 'Last week',
+                    content: 'Can’t believe it’s been a year since I started my fitness journey. Feeling stronger every day! 💪 #fitness #motivation',
+                    liked: false,
+                    reaction: null,
+                },
             ];
         },
 

@@ -1,0 +1,2 @@
+.columns{height:100vh;overflow:hidden}#main-content,.chat-column,.sidebar{height:100%;overflow-y:scroll;-ms-overflow-style:none;scrollbar-width:none;transition:overflow-y .3s ease}#main-content::-webkit-scrollbar,.chat-column::-webkit-scrollbar,.sidebar::-webkit-scrollbar{display:none}#main-content:hover,.chat-column:hover,.sidebar:hover{overflow-y:scroll}
+/*# sourceMappingURL=user_home_page_template.min.css.map */

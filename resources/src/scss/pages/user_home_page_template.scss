@@ -1,0 +1,30 @@
+/* General styles for the columns */
+.columns {
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Prevent scrolling on the entire page */
+}
+
+/* Sidebar, Main Content, and Chat Column */
+.sidebar,
+#main-content,
+.chat-column {
+    height: 100%; /* Full height of the parent container */
+    overflow-y: scroll; /* Allow scrolling but hide the scrollbar */
+    -ms-overflow-style: none; /* Hide scrollbar for Internet Explorer and Edge */
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+    transition: overflow-y 0.3s ease; /* Smooth transition for hover behavior */
+}
+
+/* Hide scrollbar for WebKit-based browsers (Chrome, Safari, etc.) */
+.sidebar::-webkit-scrollbar,
+#main-content::-webkit-scrollbar,
+.chat-column::-webkit-scrollbar {
+    display: none; /* Completely hide the scrollbar */
+}
+
+/* Optional: Add hover behavior for better UX */
+.sidebar:hover,
+#main-content:hover,
+.chat-column:hover {
+    overflow-y: scroll; /* Ensure scrolling is still functional */
+}
